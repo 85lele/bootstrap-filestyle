@@ -199,7 +199,7 @@
 
             // hidding input file and add filestyle
             this.$element
-                .css({'position':'fixed','left':'-9999px'})
+                .css({'position':'absolute','clip':'rect(0,0,0,0)'})
                 .attr('tabindex', "-1")
                 .after(this.$elementFilestyle);
 
@@ -218,6 +218,8 @@
 
                 if (content !== '') {
                     _self.$elementFilestyle.find(':text').val(content.replace(/\, $/g, ''));
+                } else {
+                	_self.$elementFilestyle.find(':text').val('');
                 }
             });
 
