@@ -90,9 +90,9 @@
                 this.options.classButton = value;
                 this.$elementFilestyle.find('label').attr({'class': this.options.classButton});
                 if (this.options.classButton.search(/btn-inverse|btn-primary|btn-danger|btn-warning|btn-success/i) !== -1) {
-                    this.$elementFilestyle.find('label i').addClass('icon-white');
+                    this.$elementFilestyle.find('label span').addClass('icon-white');
                 } else {
-                    this.$elementFilestyle.find('label i').removeClass('icon-white');
+                    this.$elementFilestyle.find('label span').removeClass('icon-white');
                 }
             } else {
                 return this.options.classButton;
@@ -103,9 +103,9 @@
             if (value !== undefined) {
                 this.options.classIcon = value;
                 if (this.options.classButton.search(/btn-inverse|btn-primary|btn-danger|btn-warning|btn-success/i) !== -1) {
-                    this.$elementFilestyle.find('label').find('i').attr({'class': 'icon-white '+this.options.classIcon});
+                    this.$elementFilestyle.find('label').find('span').attr({'class': 'icon-white '+this.options.classIcon});
                 } else {
-                    this.$elementFilestyle.find('label').find('i').attr({'class': this.options.classIcon});
+                    this.$elementFilestyle.find('label').find('span').attr({'class': this.options.classIcon});
                 }
             } else {
                 return this.options.classIcon;
@@ -128,7 +128,7 @@
                     colorIcon = ' icon-white ';
                 }
 
-                return '<i class="'+colorIcon+this.options.classIcon+'"></i> ';
+                return '<span class="'+colorIcon+this.options.classIcon+'"></span> ';
             } else {
                 return '';
             }
@@ -165,7 +165,7 @@
                     buttonContainerOpen+
                         '<label for="'+id+'" class="'+this.options.classButton+'">'+
                             this.htmlIcon()+
-                            '<span>'+this.options.buttonText+'</span>'+
+                            ' '+this.options.buttonText+
                         '</label>'+
                     buttonContainerClose+
                     inputContainerOpen+
@@ -179,7 +179,7 @@
                     buttonContainerOpen+
                         '<label for="'+id+'" class="'+this.options.classButton+'">'+
                             this.htmlIcon()+
-                        '<span>'+this.options.buttonText+'</span>'+
+                        ' '+this.options.buttonText+
                     '</label>'+
                     buttonContainerClose;
             }
